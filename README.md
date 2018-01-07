@@ -100,6 +100,29 @@ After that, you will need to recompile your project with `react-native run-andro
 
 ![android install](https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/docs/android-install.png?raw=true)
 
+#### Windows  
+1. Open the solution in `Visual Studio` for your Windows apps.
+  - Right click your in the Explorer and click `Add` > `Existing Project...`.
+  - Navigate to `./<app-name>/windows/RNI18n/` and add `RNI18n.csproj`.
+  - Right click on your React Native Windows app under your solutions directory and click `Add` > `Reference...`.
+  - Check the `RNI18n` you just added and press `Ok`.
+
+2. Open `MainPage.cs` in your app
+ - Edit it like below:
+
+```
+using RNI18n;
+
+get
+  {
+      return new List<IReactPackage>
+      {
+          new MainReactPackage(),
+          new RNI18nPackage(),
+      };
+  }
+```
+
 ## Usage
 
 ```javascript
@@ -156,7 +179,7 @@ I18n.translations = {
   fr
 };
 
-export default I18n; 
+export default I18n;
 
 // usage in component
 
